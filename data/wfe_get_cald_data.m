@@ -31,9 +31,9 @@ for m = 1:M
         lc_slope = 0.633;   % read directly from cal files - Volt to N on Load Cell
         cdat = 1/lc_slope*(data.Data(:,m) - mean(data.Data(:,m)));
         if (strcmp(data.BodySetup, 'Fl'))
-            arm = 0.6;          % load cell was located appox 0.6 m from hinge
+            arm = 0.625;          % load cell was located appox 0.625 m from hinge
         else
-            arm = 0.4;          % load cell was located appox 0.4 m from hinge
+            arm = 0.25;          % load cell was located appox 0.25 m from hinge
         end
         cData(:,m) = arm*cdat;  % Torqe in Nm
     else
