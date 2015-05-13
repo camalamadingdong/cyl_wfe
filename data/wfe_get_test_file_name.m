@@ -3,10 +3,22 @@ function [name] = wfe_get_test_file_name(date, wg_setup, wg_conn, wave_type, wav
 freqstr = num2str(wave_freq, '%4.2f');
 freqstr = ['_f' freqstr(1) freqstr(3:4)];
 
-datestr = [date(7:10) date(4:5) date(1:2)];
+if (isempty(date))
+    datestr = '*';
+else
+    datestr = [date(7:10) date(4:5) date(1:2)];
+end
 
 wavestr = [freqstr '_' wave_type];
-endstr = ['_wg' num2str(wg_setup) '_' wg_conn '_' datestr  '_' num2str(run_num)];
+if (isempty(run_num))
+    runstr = '*';
+else
+    runstr = num2str(run_num);
+end
+if (isempty(wg_conn))
+    wg_conn = '*';
+end
+endstr = ['_wg' num2str(wg_setup) '_' wg_conn '_' datestr  '_' runstr];
 
 if(prac_run)
     endstr = [endstr 'p'];

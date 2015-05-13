@@ -6,19 +6,16 @@ type = name(1:2);
 
 switch type
     case 'WG'
-        subpath = 'Cal_files\WG';
         xlab = 'Depth (cm)';
     case 'LC'
-        subpath = 'Cal_files\Load_cell';
         xlab = 'Force (N)';
     case 'PO'
-        subpath = 'Cal_files\Position';
         xlab = 'Length (cm)';
     otherwise
         error('Cal file not recognized');
 end
 
-cal_file = [folder_path, '\', subpath, '\', name];
+cal_file = [folder_path, '\', name];
 
 calData = wfe_load_cal_file(cal_file);
 

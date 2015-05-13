@@ -30,7 +30,7 @@ stopX = levels(end) + 0.1*deltaL;
 x = linspace(startX, stopX, 100);
 y = slope*x + intercept;
 
-errorbar(levels, calVals, stdCalVals, 'LineStyle', 'none', 'Marker', '.');
+errorbar(levels, calVals, stdCalVals, 'LineStyle', 'none', 'Marker', '.', 'MarkerSize', 10);
 hold on;
 plot(x,y, 'k--');
 set(gca, 'xlim', [startX stopX]);

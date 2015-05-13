@@ -347,13 +347,10 @@ classdef TestData
                         
             switch body
                 case 'None'
-                    the_dir = [mainDir '\No_Body\'];
                     startStr = [startStr '_NB'];
                 case 'Flap'
-                    the_dir = [mainDir '\Flap\'];
                     startStr = [startStr '_Fl'];
                 case 'Atten'
-                    the_dir = [mainDir '\Attenuator\'];
                     startStr = [startStr '_At'];
                 otherwise
                     error('TestData body not reconized');
@@ -362,15 +359,12 @@ classdef TestData
             range = [];
             switch mot
                 case 'Fix'
-                    the_dir = [the_dir 'Fixed\'];
                     startStr = [startStr '_Fix'];
                 case 'Rad'
-                    the_dir = [the_dir 'Radiating\'];
                     startStr = [startStr '_Rad'];
                     orien = 0;
                     range = 'Range';
                 case 'Free'
-                    the_dir = [the_dir 'Free\'];
                     startStr = [startStr '_Fre'];
                     
                 case 'NA'
@@ -464,7 +458,7 @@ classdef TestData
                     else
                         runz = [startStr '_' fstr '_' wavstr '_wg' num2str(wgSet(l)) '_' wgconns{m} '_*.csv'];
                     end
-                    namez = dir([the_dir runz]);
+                    namez = dir([mainDir '\' runz]);
                     namez = {namez.name};
                     
                     for n = 1:length(namez)
@@ -486,7 +480,7 @@ classdef TestData
                         count = count + 1;
                         allruns{count} = nam;
 
-                        data = wfe_load_data_file([the_dir namez{n}]);   % load the data file
+                        data = wfe_load_data_file([mainDir '\' namez{n}]);   % load the data file
                         cData = wfe_get_cald_data(mainDir, data);      % calibrate data
                         sampleFreq = data.SampleFreq;                   % sample frequency
                         

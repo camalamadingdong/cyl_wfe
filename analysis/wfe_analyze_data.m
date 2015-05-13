@@ -1,10 +1,9 @@
-function [fs, as, a2s, eps, alerts] = wfe_analyze_data(folder_path, name, varargin)
+function [fs, as, a2s, eps, alerts] = wfe_analyze_data(file_loc, name, varargin)
 
 [opts, args] = checkOptions({{'StartTime',1}, {'Chans',1}, {'NoPlot'}}, varargin);
 noPlot = opts(3);
 
-data_file = [folder_path, '\', wfe_get_subpath(name), '\', name];
-data = wfe_load_data_file(data_file);
+data = wfe_load_data_file([file_loc, '\', name]);
 
 N = data.ChannelCount;
 t = data.time;
@@ -30,7 +29,7 @@ else
 end
 
 % calibrate data
-cData = wfe_get_cald_data(folder_path, data);
+cData = wfe_get_cald_data(file_loc, data);
 
 % Analyze data
 M = sum(ichans);

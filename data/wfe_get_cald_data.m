@@ -9,7 +9,8 @@ end
 if (strcmp(data.WGCalFile, 'none'))
     wg_slopes = ones(1,M);
 else
-    wg_cal_file = [folder_path '\Cal_files\WG\' data.WGCalFile];
+    %wg_cal_file = [folder_path '\Cal_files\WG\' data.WGCalFile];
+    wg_cal_file = [folder_path '\' data.WGCalFile];
     % for now ignore intercepts and just subtract the mean
     cal = wfe_load_cal_file(wg_cal_file);
     wg_slopes = cal.Slopes;
@@ -27,8 +28,14 @@ for m = 1:M
         end
         cData(:,m) = 1/pos_slope*(data.Data(:,m) - mean(data.Data(:,m)));
     elseif (strcmp(data.ChanNames{m}, 'Force'))
-        lc_slope = 0.633;   % read directly from cal files
-        cData(:,m) = 1/lc_slope*(data.Data(:,m) - mean(data.Data(:,m)));
+        lc_slope = 0.633;   % read directly from cal files - Volt to N on Load Cell
+        cdat = 1/lc_slope*(data.Data(:,m) - mean(data.Data(:,m)));
+        if (strcmp(data.BodySetup, 'Fl'))
+            arm = 0.6;          % load cell was located appox 0.6 m from hinge
+        else
+            arm = 0.4;          % load cell was located appox 0.4 m from hinge
+        end
+        cData(:,m) = arm*cdat;  % Torqe in Nm
     else
         n = n + 1;
         % not using intercept values for now bc produces weird results

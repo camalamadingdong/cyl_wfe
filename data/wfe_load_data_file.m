@@ -5,7 +5,12 @@ data.Description = 'Test Data';
 headlen = wfe_write_header();
 delim = ',';
 
-dataVals = importdata(file_path, delim, headlen + 22);
+try 
+    dataVals = importdata(file_path, delim, headlen + 22);
+catch
+    data = -1;
+    return
+end
 
 C = textscan(dataVals.textdata{headlen+2},'%s','delimiter',delim);
 data.Date = C{1}{2};
@@ -69,4 +74,14 @@ time = 0:data.dt:(data.SampleCount - 1)*data.dt;
 data.time = time;
 
 data.Data = dataVals.data;
+
+
+if (strcmp(data.Date, '06/11/2014'))
+    if (strcmp(data.BodySetup, 'Fl'))
+        if (strcmp(data.BodyMotions, 'Fix'))
+            warning('Data may not be good - rig was oscillating during testing. The problem was fixed later. Look for test on different day');
+        end
+    end
+end
+
 clear dataVals;
