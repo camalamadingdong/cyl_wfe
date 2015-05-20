@@ -9,7 +9,7 @@ The experimental data from these tests is available on Figshare:
 * **Summary:**  http://figshare.com/articles/Cylindrical_Wave_Field_Experiments_Summary/1412668
 * **Raw data:** http://figshare.com/articles/Cylindrical_Wave_Field_Experiments_Raw_Data/1404959
 * **Body geometry:** http://figshare.com/articles/Cylindrical_Wave_Field_Experiments_Body/1404120
-* **Wave gauge:** http://figshare.com/articles/Cylindrical_Wave_Field_Experiments_Wave_Gauge/1404122
+* **Wave gauge setup:** http://figshare.com/articles/Cylindrical_Wave_Field_Experiments_Wave_Gauge/1404122
 * **Incident wave:** http://figshare.com/articles/Cylindrical_Wave_Field_Experiments_Wave/1404121
 * **Photos:** http://figshare.com/articles/Cylindrical_Wave_Field_Experiments_Photos/1404123
 * **Videos:** http://figshare.com/articles/Cylindrical_Wave_Field_Experiments_Videos/1404137
