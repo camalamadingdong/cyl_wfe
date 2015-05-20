@@ -4,6 +4,17 @@ The experiments were conducted to measure the linear cylindrical coefficients of
 This repository contains the MATLAB scripts used for processing the data.
 
 ##Data
-The experimental data from these tests, including raw data, some processed data, setup descriptions, and pictures and videos is available at
+The experimental data from these tests is available on Figshare:
+
+* **Summary** -  http://figshare.com/articles/Cylindrical_Wave_Field_Experiments_Summary/1412668
+* **Raw data** - http://figshare.com/articles/Cylindrical_Wave_Field_Experiments_Raw_Data/1404959
+* **Body geometry info** - http://figshare.com/articles/Cylindrical_Wave_Field_Experiments_Body/1404120
+* **Wave gauge setup info** - http://figshare.com/articles/Cylindrical_Wave_Field_Experiments_Wave_Gauge/1404122
+* **Incident wave info** - http://figshare.com/articles/Cylindrical_Wave_Field_Experiments_Wave/1404121
+* **Photos** - http://figshare.com/articles/Cylindrical_Wave_Field_Experiments_Photos/1404123
+* **Videos** - http://figshare.com/articles/Cylindrical_Wave_Field_Experiments_Videos/1404137
+
+##Getting started
+The best place to start is with the examples in the 'examples' folder. For these you will also need the raw data. Download all of the raw data and put it in a single folder. Then in the examples, change the directory to the folder where the raw data is.  *Have Fun!*
 
 http://figshare.com/account/projects/4117
