@@ -6,7 +6,7 @@ This repository contains the MATLAB scripts used for processing the data.
 ##Data
 The experimental data from these tests is available on Figshare:
 
-* **Summary:**  figshare.com/articles/Cylindrical_Wave_Field_Experiments_Summary/1412668
+* **Summary:**  (figshare.com/articles/Cylindrical_Wave_Field_Experiments_Summary/1412668)
 * **Raw data:** figshare.com/articles/Cylindrical_Wave_Field_Experiments_Raw_Data/1404959
 * **Body geometry:** figshare.com/articles/Cylindrical_Wave_Field_Experiments_Body/1404120
 * **Wave gauge setup:** figshare.com/articles/Cylindrical_Wave_Field_Experiments_Wave_Gauge/1404122
